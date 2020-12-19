@@ -10,10 +10,18 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @RequiredArgsConstructor
 @Document
 public class Order {
-    @Id
-    String id;
+    @Getter
+    @Id String id;
+
     @Getter
     @NonNull String username;
     @Getter
-    @NonNull int carId;
+    @NonNull long carId;
+    @Getter
+    @NonNull String startDate;
+    @Getter
+    @NonNull String endDate;
+    @Getter
+    @NonNull long price;
+
 }

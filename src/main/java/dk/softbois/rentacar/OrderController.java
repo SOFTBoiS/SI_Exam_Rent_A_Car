@@ -35,8 +35,10 @@ public class OrderController {
 
     @PostMapping("/")
     public ResponseEntity makeOrder(@RequestBody Order order) {
+        System.out.println("MakeOrder start");
         Order saved = orderRepo.save(order);
-        return new ResponseEntity<>(saved, HttpStatus.OK);
+        System.out.println("order save response: " + saved.toString());
+        return new ResponseEntity<>(saved, HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
