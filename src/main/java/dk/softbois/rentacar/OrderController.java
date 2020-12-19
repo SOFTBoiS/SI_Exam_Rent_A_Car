@@ -19,8 +19,13 @@ public class OrderController {
     private Object Order;
 
     @GetMapping("/")
-    public List<Order> retrieveAllReviews() {
+    public List<Order> retrieveAllOrders() {
         return orderRepo.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Order retrieveOrder(@PathVariable String id) {
+        return orderRepo.findOneById(id);
     }
 
     @GetMapping("/username/{username}")

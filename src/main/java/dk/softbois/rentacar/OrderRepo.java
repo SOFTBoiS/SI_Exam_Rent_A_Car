@@ -6,6 +6,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource
 public interface OrderRepo extends MongoRepository<Order, String> {
+    Order findOneById(String id);
     Iterable<Order> findAllByCarId(int carId);
     Iterable<Order> findAllByUsername(String username);
 }
